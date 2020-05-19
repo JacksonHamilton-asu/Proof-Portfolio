@@ -1,0 +1,525 @@
+\documentclass[11pt, oneside]{article}   	
+\usepackage[margin=1in]{geometry}                		
+\evensidemargin=0.25in  
+\oddsidemargin=0.25in 
+\textwidth=6.25in
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+
+
+\usepackage{graphicx,color}	
+
+%%% Here I define my colors.  You can go to  http://latexcolor.com/ to find a list of other colors you could add. 
+\definecolor{green}{rgb}{0.0, 0.5, 0.0}			
+\definecolor{red}{rgb}{1.0, 0.13, 0.32}
+\definecolor{blue}{rgb}{0.0, 0.5, 1.0}	
+ 	\definecolor{orange}{rgb}{0.93, 0.57, 0.13}
+\definecolor{purple}{rgb}{0.6, 0.33, 0.73}
+\definecolor{brown}{rgb}{0.44, 0.26, 0.08}
+					
+\usepackage{amssymb, amsmath, amsfonts, amsthm,multicol}
+
+\title{MAT 2110 Portfolio}
+\author{Jackson Hamilton}
+\date{Fall 2018}
+
+
+
+\begin{document}
+\newcommand{\modular}[1]{\; \mbox{(mod $#1$)}}
+\thispagestyle{empty}
+\maketitle
+\tableofcontents
+\thispagestyle{empty}
+
+
+
+\mbox{}
+\newpage
+\setcounter{page}{1}
+
+
+
+\section{Definitions and Named Theorems}
+\noindent \textit{You should give definitions for each of these terms or theorems.  In addition you must use each of the terms/theorems in at least one proof in your portfolio.  Make sure to underline the term when it appears in your portfolio work. }
+\begin{itemize}
+\item \textbf{even integer}:  The integer $x$ is even if and only if $x=2t$ for some integer $t$. \vfill
+\item \textbf{odd integer}:  The integer $x$ is odd if and only if $x=2t+1$ for some integer $t$.  \vfill 
+\item \textbf{$a$ divides $b$}:  The integer $a$ divides the integer $b$ when $b=at$ for some $t$.  \vfill
+\item \textbf{the division algorithm}: Let $a$ and $b$ be integers with $b>0$. Then there exists unique integers $q$ and $r$ with the property that $a = bq + r$, where $0\leq r<b$\vfill 
+\item \textbf{the gcd is an integer linear combination theorem}:  For any nonzero integers $a$ and $b$, there exists integers $s$ and $t$ such that $gcb(a,b) = as + bt$. \vfill
+\item \textbf{relatively prime integers}:  If two integers greatest common divisor is 1, then they are relatively prime.  \vfill 
+\item \textbf{$x  \equiv y  \modular{n} $}: Let $a$ and $b$ be integers and let $n$ be a natural number. We say $a$ is equivalent to $b$ modulo $n$ and write  
+\begin{center}
+$a  \equiv b  \modular{n} $ \end{center}
+exactly when 
+\begin{center}
+$n\mid(a - b)$\vfill \end{center}
+\item \textbf{the intersection of two sets}: $A \cap B =$ \textbraceleft {$x\mid x\in A$ and $x\in B$}\textbraceright \vfill
+\item \textbf{the union of two sets}: $A \cup B =$ \textbraceleft{$x\mid x\in A$ or $x\in B$}\textbraceright \vfill 
+\item \textbf{the image of a set under the function $f$}: Let $f : A\rightarrow B$ be a function, and let $C\subseteq A$. The image of $C$ under $f$ is given by
+\begin{center}
+    $f(C) =$ \textbraceleft{$f(x)\mid x\in C$}\textbraceright
+\end{center}\vfill 
+\item \textbf{the pre-image of a set under the function $f$}: Let $f : A\rightarrow B$ be a function and let $C\subseteq B$. The preimage of $C$ under $f$ is
+\begin{center}
+    $f^{-1}(C)=$\textbraceleft{$x\in A\mid f(x)\in C$}\textbraceright 
+\end{center}\vfill 
+
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent \textit{For each proof style listed below, give at least one example of a theorem and its proof that uses the given style.  Highlight the style by color-coding your proof.  Don't forget that you need to make use of each of the definitions in the definitions/theorems section so choose your examples wisely!  When you first use a definition/theorem from our list underline the term/theorem in your work.  I've completed the Direct proof of $A \rightarrow B$ section  to give you an idea of what I expect from you.}
+
+\section{Direct Proof of $A \rightarrow B$}
+
+		\begin{center} 
+		\textcolor{green}{Assume $A$ is true} \\
+		 $\vdots$ \\ Do math \\ $\vdots$ \\
+		\textcolor{blue}{Therefore $B$ is true.}\\[0.2in]
+		\end{center} 
+
+
+\noindent \textbf{Theorem}:  If $x$ is \underline{odd} then $x^2$ is odd. 
+\begin{proof}  \textcolor{green}{Let $x$ be odd}.  Then by definition $x=2t+1$ for some integer $t$.  Thus 
+$$x^2 = (2t + 1)^2=4t^2 + 4t + 1 =2(2t^2+2t) +1.$$
+\textcolor{blue}{Therefore, since $(2t^2+2t)$ is an integer,  we can conclude that  $x^2$ is odd.}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Direct Proof of $A \rightarrow (B \vee C)$}
+
+		\begin{center} 
+		\textcolor{green}{Assume $A$ is true.} \\
+		\textcolor{red}{Assume $\neg B$ is true.}\\ 
+ 		$\vdots$ \\ Do math \\ $\vdots$ \\
+ 		\textcolor{blue}{Therefore $C$ is true.} \\ 
+ 		\textcolor{orange}{Summarize that $A \rightarrow (B \vee C)$.}\\[0.2in]
+ 		\end{center} 
+
+\noindent \textbf{Theorem}:      If $xy$ is even then $x$ is even or $y$ is even.
+\begin{proof}\textcolor{green}{Assume that $xy$ is even.} \textcolor{red}{Also assume that $x$ is odd.} Then $xy=2t$ for some integer $t$ and $x=2k+1$ for some integer $k$. Hence, $$2t=xy=(2k+1)(y) = 2k+y.$$
+\textcolor{blue}{Therefore, $y=2t-2ky=2(t-ky)$ and since $t-ky$ is an integer, we know $y$ is even}. \textcolor{orange}{Therefore if $xy$ is even then $x$ is even or $y$ is even}.
+\end{proof}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Direct Proof of $(A \vee B) \rightarrow C$}
+
+		\begin{multicols}{2} 
+		\begin{minipage}{2.5in}
+		\begin{center}
+ 		\textbf{Case 1}:\\
+		\textcolor{green}{First suppose that $A$ is true.}\\
+ 		$\vdots$ \\ Do math \\ $\vdots$ \\
+ 		\textcolor{blue}{Therefore $C$ is true}. \\[0.2in]
+ 		\end{center} \end{minipage}
+ 
+  		\begin{minipage}{2.5in}
+  		\begin{center}
+ 		\textbf{Case 2}:\\
+		 \textcolor{red}{Next suppose that $B$ is true.}\\
+		 $\vdots$ \\ Do math \\ $\vdots$ \\
+		 \textcolor{purple}{Therefore $C$ is true.} \\[0.2in]
+  		\end{center} \end{minipage} \end{multicols}
+  		\begin{center} 
+ 		\textbf{Conclusion}: \\
+		\textcolor{orange}{Summarize that $(A \vee B) \rightarrow C$.}\\[0.2in] 
+		  \end{center} 
+		  
+\noindent \textbf{Theorem}:   If $p$ is prime then $p+7$ is composite.
+\begin{proof}
+We will assume that $p$ is prime. Because of a prior theorem, we know the $p$ is either odd or $p=2$.\\
+\textbf{Case 1:}  
+\textcolor{green}{Suppose that $p$ is odd.} then $p=2k+1$ for some integer $k$. So,
+\begin{center}
+$p+7=2k+1+7$\\
+$=2k+8$\\
+$=2(k+4)$    
+\end{center}
+\textcolor{blue}{Since $2$ is a divisor of $p+7$ other than $1$ and itself, $p+7$ is composite.}\\
+\textbf{Case 2:}
+\textcolor{red}{Suppose $p=2$.} Then
+\begin{center}
+$p+7=2+7$\\
+$=9$\\
+$=(3)(3)$
+\textcolor{purple}{Since $3$ is a divisor of $p+7$ other than $1$ and itself, $p+7$ is composite.}
+\end{center}
+
+
+\end{proof}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Proof of $A \rightarrow B$ using the contrapositive }
+
+		\begin{center}
+		\textcolor{red}{Explain that you will prove the contrapositive.}\\
+		\textcolor{green}{ Assume $\neg B$ is true.}\\
+		 $\vdots$ \\ Do math \\ $\vdots$ \\
+		 \textcolor{blue}{Conclude $\neg A$ is true.}\\[0.2in]
+		 \end{center}
+		 
+ \noindent \textbf{Theorem}:   If $a^{2}+3a+5$ is an even integer then $a$ is an even integer.
+ \begin{proof}\textcolor{red}{We will be using the contrapositive.}
+		\textcolor{green}{ Assume that $a$ is an odd integer.}\
+		  So, $a=2k+1$ for some integer $k$. Using this, we can plug $a=2k+1$ into
+		 \begin{center}$a^{2}+3a+5$\\
+		 or\\
+		     $(2k+1)^{2}+3(2k+1)+5$.
+		 \end{center}  
+		 After expanding, we have $4k^{2}+4k+1+6k+3+5=4k^{2}+10k+8+1=2(2k^{2}+5k+4)+1$. Since $(2k^{2}+5k+4)$ is an integer, we have proven the contrapositive.
+		 \textcolor{blue}{Therefore, $a^{2}+3a+5$ is odd.}\end{proof}
+		 
+
+
+\newpage
+\section{Proof of $A \rightarrow B$ (or simply $B$) by contradiction}
+
+		\begin{center}
+		\textcolor{green}{If you are proving $A \rightarrow B$ begin by assuming that $A$ is true.}\\
+		\textcolor{red}{Suppose $\neg B$ is true.} \\
+		 $\vdots$ \\ Do math \\ $\vdots$ \\
+		 \textcolor{purple}{Reach a contradiction (i.e. conclude something that you know can't be true).\\  Make sure to point out this contradiction!}\\
+		 \textcolor{blue}{Therefore $B$ must be true.}\\[0.2in] 
+		 \end{center}
+		 
+  \noindent \textbf{Theorem}:    If $a$, $b$, and $c$ are integers then at least one of $a-b$, $a+c$, and $b-c$ is even. 
+ 
+ \begin{proof}
+		\textcolor{green}{Assume that $a$, $b$, and $c$ are integers.}
+		\textcolor{red}{For the sake of contradiction, $a-b$, $a+c$, and $b-c$ are odd.}
+		There exists integers $e$, $f$, and $g$ such that 
+		\begin{center}
+		$a-b=2e+1$
+		\\$a+c=2f+1$\\
+		$b+c=2g+1$
+		\end{center}
+		Then, $a=2e+1+b$ and $c=b-2g-1$. After adding these together, we get $a+c=2e+1+b+b-2g-1=2e+2b-2g=2(e+b-g)$, which is even.
+		\textcolor{purple}{But a+c is odd, which is a contradiction.}
+		\textcolor{blue}{Therefore $a-b$, $a+c$, and $b-c$ is even.}\end{proof} 
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+ 
+  
+  \section{Proof of $A \leftrightarrow B$}
+		  \begin{multicols}{2} 
+		  \begin{minipage}{3in}
+		  \begin{center}
+		  \textcolor{green}{First we will show $A \rightarrow B$} \\
+		  (use whatever method works best:\\
+		  direct, contrapositive, contradiciton)\\[0.2in] \end{center}
+ 		 \end{minipage}
+  
+	       \begin{minipage}{2.5in} \begin{center}
+	       \textcolor{purple}{Next we will show $B \rightarrow A$}\\
+	      (use whatever method works best:\\
+ 	     direct, contrapositive, contradiciton)\\[0.2in]
+ 		\end{center}  \end{minipage} \end{multicols}
+		
+\noindent \textbf{Theorem}:   Prove that the integer $a^{2}+4a+5$ is odd if and only if $a$ is even.
+\begin{proof}
+First we are going to prove that if $a^{2}+4a+5$ is an integer, then $a$ is even. To do this, 
+\textcolor{red}{we will prove the contrapositive.}
+\textcolor{green}{Assume that $a$ is odd.} Then $a=2d+1$ for some integer $d$. So,
+\begin{center}
+$a^{2}+4a+5=(2d+1)^{2}+4(2d+1)+5$\\
+$=4d^{2}+4d+1+8d+4+5$\\
+$=4d^{2}+12d+10$\\
+$=2(2d^{2}+6d+5)$\\
+\end{center}
+\textcolor{blue}{Since $2d^{2}+6d+5$ is an integer, we can see that $a^{2}+4a+5$ is even.}
+
+Now we'll show that if a is even, then $a^{2}+4a+5$ is odd. 
+\textcolor{green}{Assume that $a$ is even.} Then $a=2c$ for some integer $c$. So,
+\begin{center}
+$a^{2}+4a+5=(2c)^{2}+4(2c)+5$\\
+$=4c^{2}+8c+5$\\
+$=4c^{2}+8c+4+1$\\
+$=2(2c^{2}+4c+2)+1$\\
+\end{center}
+\textcolor{blue}{Therefore, since $2c^{2}+4c+2$ is an integer, we know that $a^{2}+4a+5$ is odd.}
+\end{proof}
+ 
+ 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		   \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   
+   \section{There exists a unique element with a given property}
+   
+   		\begin{center}
+ 		  \textcolor{green}{Consider $a= \underline{\qquad \qquad}$. \\
+ 		  ($a$ should be some element that you think has the given property.  \\ You typically find it via super-secret scratch-work).}\\[0.2in] 
+ 		  \textcolor{red}{Show that $a$ has the property.}\\[0.2in] 
+  		 \textcolor{purple}{Suppose that $a$ and $b$ both have the given property.}\\
+  		  $\vdots$ \\ Do math \\ $\vdots$ \\
+  		  \textcolor{blue}{Conclude that $a=b$ so that $a$ was in fact unique.}\\[0.2in] 
+		  \end{center} 
+		  
+\noindent \textbf{Theorem}:Prove that given an \textbf{even} integer $y$ there exists a unique integer $x$ such that $2x+6=y$.
+\begin{proof}
+Let $y$ be an even integer, meaning that there exists an integer $c$ such that $y=2c$. 
+\textcolor{green}{Consider $x=c-3$}, which comes from
+\begin{center}
+   \textcolor{red}{ $2x+6=2(c-3)+6$\\
+    $=2c-6+6$\\
+    $2c=y$}
+\end{center}
+\textcolor{purple}{So there exists an integer $x$ ($x=c-3$) such that $2x+6=y$.} To show that $x$ is unique, suppose $2x+6=y$ and $2x_{z}+6=y$. Then, $2x+6=2x_{z}+6$ and $2x=2x_{z}$.
+\textcolor{blue}{Hence, $x=x_{z}$, making $x$ unique.}
+\end{proof}
+
+
+
+         
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   	   \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	   
+\section{Prove $P(n)$ holds for all $n \ge c$ by mathematical induction}
+
+ 	           \begin{center}
+  	          \textcolor{green}{Prove $P(c)$ (Base Case)}\\
+ 	         \textcolor{red}{Assume $P(k)$ hods for an arbitrary $k \ge c$ (Inductive Hypothesis)}\\
+ 	         $\vdots$ \\ Do math   \\ $\vdots$ \\   
+	         \textcolor{blue}{Conclude that  $P(k+1)$ holds } \\
+  	        \textcolor{orange}{Hence, by PMI, $P(n)$ holds for all $n \ge c$.}\\[0.2in]
+	         \end{center}
+   
+ \noindent \textbf{Theorem}:  Prove that $n+5 < 5n^{2}$ for all integers $n\geq 2$.
+ \begin{proof}
+ Let $P(n)$ be the statement $n+5 < 5n^{2}$. We"ll proceed by induction to show that $P(n)$ holds for all $n\geq 2$. \\
+ \textbf{Base Case}:
+ \textcolor{green}{Observe $P(2)$. It says $2+5 < 5(2)^{2}$. This simplifies to $7 < 20$ which is obviously true.} \\
+ \textbf{Inductive Hypothesis}:
+ For our inductive hypothesis, lets assume that
+ \textcolor{red}{$P(n)$ holds for some $k \geq 2$. So, $k+5 < 5k^{2}$}\\
+ \textbf{Inductive Step}:
+ We will show that $P(k+1)$ holds. That is $(k+1)+5 < 5(k+1)^{2}$ which simplifies to $k+6 < 5k^{2}+10k+5$. Adding $1$ to our inductive hypothesis gives us $k+5+1 < 5k^{2}+1 < 5k^{2}+1+(10k+4)$.
+ \textcolor{blue}{This leaves us with $k+6 < 5k^{2}+10k+5$ and $P(k+1)$ holds.}\\
+ \textcolor{orange}{Hence, by PMI, $P(n)$ hold for all $n\geq 2$.}
+ \end{proof}
+ 
+ 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\section{Prove $A \subseteq B$}
+
+		\begin{center}
+		\textcolor{green}{Let $x \in A$} \\
+		   $\vdots$ \\ Do math   \\ $\vdots$ \\  
+		\textcolor{blue}{Therefore  $x \in B$}\\[0.2in]
+		\end{center}
+		
+ \noindent \textbf{Theorem}: Let $A=$\textbraceleft{$x\in \mathbb{Z} \mid 9\mid x$}\textbraceright and let $B=$\textbraceleft{$x\in \mathbb{Z} \mid 3\mid x$}\textbraceright.
+ 
+ \begin{proof}
+ \textcolor{green}{Let $x\in A$.}
+ So, $x\in \mathbb{Z}$ such that $9\mid x$. So, $x=9c$ for some integer $c$. Then, $x=3(3c)$. This means $x\in \mathbb{Z}$ and $3\mid x$. \textcolor{blue}{Therefore, $x\in B$ and so $A\subseteq B$.}
+ \end{proof}
+ 
+
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+ 		\newpage
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ \section{Prove  $A=B$ (set equality)}
+ 
+		 \begin{multicols}{2}
+		 \begin{minipage}{3in}
+		 \begin{center}
+		\textbf{First we need to show $A \subseteq B$}\\
+		 \textcolor{red}{Let $x \in A$}\\ 
+         	   $\vdots$ \\ Do math   \\ $\vdots$ \\  
+        	 	   \textcolor{blue}{Conclude, $x \in B$}\\[0.2in] 
+          	  \end{center} \end{minipage} 
+         	   \begin{minipage}{3in} \begin{center} 
+          		\textbf{Next we need to show $B \subseteq A$}\\
+          		  \textcolor{purple}{Let $x \in B$} \\
+                      $\vdots$ \\ Do math   \\ $\vdots$ \\  
+                      \textcolor{orange}{Conclude, $x \in A$}\\[0.2in]
+                      \end{center}  \end{minipage} \end{multicols} 
+                      
+ \noindent \textbf{Theorem}:   Let $A=$\textbraceleft{$x\in \mathbb{Z} \mid x=3r-1$} for some $r \in \mathbb{Z}$\textbraceright and $B=$\textbraceleft{$x\in \mathbb{Z} \mid x=3q+2$ for some $q\in \mathbb{Z}$}\textbraceright.
+ 
+ \begin{proof}
+ 
+	\textbf{Case 1:}	\textcolor{red}{Let $x \in A$.}
+		 Then, $x=3r-1$ for some integer $r$. So, this means
+		 \begin{center}
+		     $x=3r-1+2-2$\\
+		     $x=3r-3+2$\\
+		     $x=3(r-1)+2$\\
+		 \end{center}
+		\textcolor{blue}{Since $r-1$ is an integer, we can see that $x\in B$.}
+	Therefore  $A \subseteq B$.\\
+	\textbf{Case 2:} \textcolor{purple}{Let $y \in B$.} Then $y=3q+1$ for some integer $q$. So, this means
+	\begin{center}
+	    	$y=3q+2+1-1$\\
+	    	$y=3q+3-1$\\
+	    	$y=3(q+1)-1$
+	    \end{center}
+	    \textcolor{orange}{Since $q+1$ is an integer, we can see that $y\in B$.} Therefore $B\subseteq B$.
+ \end{proof}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		 \newpage    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+ \section{$R$ is an equivalence relation on the set $S$}
+ 
+ 		\begin{multicols}{3}
+		 \begin{minipage}{2in}
+		 \begin{center}
+		 \textbf{Reflexive}: \\
+		 \textcolor{green}{Let $x \in S$}   \\
+       	  	  $\vdots$ \\ Do math   \\ $\vdots$ \\  
+       		    \textcolor{blue}{Conclude $xRx$}.\\[0.2in] 
+         	  \end{center} \end{minipage}
+          	 \begin{minipage}{2in} \begin{center} 
+          	 \textbf{Symmetric}:\\
+          	 \textcolor{purple}{Let $x,y \in S$ such that $xRy$}\\
+          	  $\vdots$ \\ Do math   \\ $\vdots$ \\  
+         	   \textcolor{orange}{Conclude $yRx$.} \\[0.2in] \end{center} 
+          	  \end{minipage}  \begin{minipage}{2in} \begin{center} 
+          	  \textbf{Transitive}:\\
+           	 \textcolor{red}{Let $x,y,z \in S$ such that $xRy$ and $yRz$}\\
+                 $\vdots$ \\ Do math   \\ $\vdots$ \\  
+                 \textcolor{brown}{Conclude $xRz$.}\\[0.2in]
+              \end{center}  \end{minipage} \end{multicols}
+                 
+\noindent \textbf{Theorem}:   Define a relation on $\mathbb{Z}$ as $xRy$ if and only if $x+y$ is even. Prove that $R$ is an equivalence relation.
+\begin{proof}
+\textbf{Reflexive}: \textcolor{green}{Let $x\in \mathbb{Z}$.} Then $x+x=2x$, which is even by the definition of even. \textcolor{blue}{Therefore, $xRx$.}\\
+\textbf{Symmetric}: \textcolor{purple}{ Let $x,y\in \mathbb{Z}$ such that $xRy$.} So, $x+y$ is even but $y+x$ is also even. \textcolor{orange}{Therefore, $yRx$.} \\
+\textbf{Transitive}: \textcolor{red}{Let $x,y,z\in \mathbb{Z}$ such that $xRy$ and $yRz$.} So, $x+y$ and $y+z$ are both even, meaning $x+y=2k$ and $y+z=2l$ for some integers $k$ and $l$. Then $x=2k-y$ and $z=2l-y$. So,
+\begin{center}
+    $x+z=2k-y+2l-y$\\
+    $=2k+2l-2y$\\
+    $=2(k+l-y)$
+\end{center}
+Since $k+l-y$ is an integer, $x+z$ is even. \textcolor{brown}{Therefore, $xRz$ making the relationship transitive.}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		 \newpage    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%\section{Prove that $f: A \rightarrow B$ is a well-defined function}
+
+		% \begin{center}
+		%\textcolor{green}{ Let $x_1= x_2 \in A$} \\ 
+		%   $\vdots$ \\ Do math   \\ $\vdots$ \\  
+		%  \textcolor{blue}{ Conclude $f(x_1) = f(x_2)$ \\  and thus  $f(x)$ is well-defined}.
+ 		% \end{center}
+	 
+%\noindent \textbf{Theorem}:   %%%%%%% ADD YOUR THEOREM AND PROOF HERE %%%%%%%%%%%%%%%%%%%%%
+  
+  	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{ Prove that $f: A \rightarrow B$ is injective (also known as one to one)}
+
+		  \begin{center}
+		  \textcolor{green}{Let $x_1, x_2 \in A$ and suppose that $f(x_1)=f(x_2)$}\\ 
+		     $\vdots$ \\ Do math   \\ $\vdots$ \\  
+  		  \textcolor{blue}{Conclude $x_1=x_2$  \\ and  thus $f(x)$ is injective.}\\[0.2in]
+   		  \end{center} 
+
+\noindent \textbf{Theorem}:   Determine if $f: \mathbb{R} \rightarrow \mathbb{R}$ given by $f(x) = e^{x}$ is an injective function.
+ \begin{proof}
+ \textcolor{green}{Let $a,b \in A$ such that $f(a)=f(b)$.} Then $e^{a}=e^{b}$ so that $a\ln{(e)}=b\ln{(e)}$, meaning $a=b$. \textcolor{blue}{So, $f(x)=e^{x}$ is injective.}
+ \end{proof}
+ 
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		 
+ 
+ \section{Prove that $f: A \rightarrow B$ is surjective (also known as onto) }
+ 
+ 	            \begin{center}
+		\textcolor{green}{Let $y \in B$.}\\   
+		\textcolor{red}{Consider $x= \underline{\qquad \qquad}$. \\
+		(this value typically comes form your super-secret scratch-work). }\\
+ 		    $\vdots$ \\ Do math   \\ $\vdots$ \\  
+		\textcolor{purple}{Conclude that $x \in A$.}\\
+  		   $\vdots$ \\ Do math   \\ $\vdots$ \\  
+   		  \textcolor{blue}{Conclude $f(x) = y$\\
+    		 and thus $f(x)$ is surjective.}
+    		 \end{center} 
+     
+\noindent \textbf{Theorem}: Prove that $\mathbb{Z}_{\geq 0}=\mathbb{N}$ $\cup$ \textbraceleft{$0$}\textbraceright is surjective.
+
+\begin{proof}
+\textcolor{green}{Let $y\in \mathbb{N}$.}
+\textcolor{red}{Consider $x=y-1$.}
+So if $y\in$\textbraceleft{1, 2, 3,...}\textbraceright\ 
+\textcolor{purple}{then $x=y-1$ $\in$\textbraceleft{1-1, 2-2, 3-3,...\textbraceright}} = \textbraceleft{0, 1, 2,...}\textbraceright = $\mathbb{N}$ $\cup$ \textbraceleft{0}\textbraceright.
+\textcolor{blue}{Along with that,
+\begin{center}
+$f(x)=f(y-1)$\\
+$=y-1+1$\\
+$=y$. 
+\end{center}
+So, $f$ is surjective.}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                   
+	           \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	           
+            
+\section{Prove that the sets $A$ and $B$ are of the same cardinality}
+
+		\begin{center}
+		\textcolor{green}{Consider a function $f: A \rightarrow B$ or $f: B \rightarrow A$ that you think (and will show below) is a bijection.    If it is not obvious that your function is a 			well-defined  with the claimed domain and co-domain you'd need to show this (but often it is obvious).}\\[0.2in]
+		\textcolor{purple}{Show that $f$ is injective using the injective template.}\\[0.2in]
+		\textcolor{blue}{Show that $f$ is surjective using the surjective template.}
+		\end{center}
+		
+\noindent \textbf{Theorem}:  Prove that the intervals (1,3) and (5,7) are of the same cardinality.      
+\begin{proof}
+\textcolor{green}{We will show the function $f:(1,3) \rightarrow(5,7)$ given by $f(x)=x+4$ is bijective.} 
+\par To show that the function is injective, \textcolor{green}{let $a,b \in (1,3)$ such that $f(a)=f(b)$}. Then, $a+4=b+4$ which simplifies to $a=b$. \textcolor{blue}{Therefore, the function is injective.} 
+
+\par To see that the funtion is surjective, \textcolor{green}{let $y \in (5,7)$}. \textcolor{red}{Consider $x=y-4$.} Since $y\in (5,7)$ $x=y-4 \in (5-4, 7-4)$ so \textcolor{purple}{$x\in (1,3)$}. Then $f(x)=f(y-4)=y-4+4=y$. \textcolor{blue}{Therefore, the function is surjective as well.}
+\end{proof}
+
+           
+\end{document} 
